@@ -5,15 +5,16 @@ import CardTag from './CardTag.vue';
 <template>
     <div class="project-card">
         <div class="project-card-image">
-            <img :src="ADDIMG" alt="project-image">
+            <img :src="project.fields.card_thumbnail[0].url" alt="project-image">
         </div>
         <div class="project-card-info">
             <div class="project-card-info-tags">
-                <Tag>Tag</Tag>
+                <CardTag v-for="tag in projectTags" :key="tag" :tag="tag">{{
+                    tag }}
+                </CardTag>
             </div>
-            <h3>Project Name</h3>
-            <!-- <p>{{ project.description }}</p> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quibusdam ducimus maiores !</p>
+            <h3>{{ project.fields.name }}</h3>
+            <p>{{ project.fields.card_description }}</p>
         </div>
     </div>
 </template>
@@ -27,9 +28,66 @@ export default {
             required: true
         }
     },
+    data() {
+        return {
+            projectTags: this.project.fields.categories_name.filter(tag => tag !== 'Tout voir'),
+        }
+    },
     components: {
         CardTag,
     },
-}
+    created() {
+        console.log(this.projectTags);
 
+    }
+}
 </script>
+
+<style scoped lang="scss">
+@use '../../assets/variables.scss' as v;
+
+div.project-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 24px 56px;
+    cursor: pointer;
+
+    div.project-card-image {
+        width: 40%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    div.project-card-info {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h3 {
+            font-size: v.$font-header2;
+            font-weight: v.$font-bold;
+            color: v.$primary-700;
+            margin: 4px 0 16px 0;
+        }
+
+        p {
+            font-size: v.$font-body;
+            font-weight: v.$font-medium;
+            margin: 0;
+        }
+    }
+}
+</style>
