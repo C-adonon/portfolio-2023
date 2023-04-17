@@ -59,4 +59,21 @@ export default {
 
 <style scoped lang="scss">
 @use '../assets/variables.scss' as v;
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+div.filter-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+
+}
+
 </style>
