@@ -3,7 +3,7 @@ import CardTag from './CardTag.vue';
 </script>
 
 <template>
-    <div class="project-card">
+    <div class="project-card" @click="goToProject">
         <div class="project-card-image">
             <img :src="project.fields.card_thumbnail[0].url" alt="project-image">
         </div>
@@ -36,9 +36,10 @@ export default {
     components: {
         CardTag,
     },
-    created() {
-        console.log(this.projectTags);
-
+    methods: {
+        goToProject() {
+            this.$router.push(`/projects/${this.project.fields.name_slug}`);
+        }
     }
 }
 </script>
