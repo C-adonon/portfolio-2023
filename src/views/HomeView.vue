@@ -1,9 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 // import NewsTicker from '../components/ui/NewsTicker.vue';
-// import  Card from '../components/card/ProjectCard.vue';
+import ProjectCard from '../components/card/ProjectCard.vue';
 // import Contact from '../components/contact/Contact.vue';
 // import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
+import { getAllProjects } from '../services/services.js';
 </script>
 
 
@@ -49,12 +50,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <!-- Projects -->
     <section class="projects">
-      <!-- TO DO AJOUTER LES CARDS listes des 2 derniers projets props=projectName? -->
-      <!-- <Card -->
-      <!-- <Card -->
       <ul class="projects-list">
-        <li>Card</li>
-        <li>Card</li>
+        <li v-for="project in projects">
+          <ProjectCard :key="project.id" :project="project" />
+        </li>
       </ul>
     </section>
 
@@ -67,6 +66,30 @@ import { RouterLink, RouterView } from 'vue-router'
     </section>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: "HomeView",
+  components: {
+    // NewsTicker,
+    ProjectCard,
+    // Contact
+  },
+  data() {
+    return {
+      projects: []
+    }
+  },
+  async created() {
+    let projectsResponse = await getAllProjects();
+    // limit the number of projects to 2
+    this.projects = projectsResponse.data.records.slice(0, 2);
+
+  }
+}
+
+</script>
 
 <style scoped lang="scss">
 @use '../assets/variables.scss' as v;
@@ -154,10 +177,12 @@ section.about {
 
 section.projects {
   ul.projects-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // gap: 2%;
+    list-style: none;
+
 
   }
 }
