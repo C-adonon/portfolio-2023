@@ -1,0 +1,63 @@
+// Colors
+
+// Primary
+$primary-050: #eee6fc;
+$primary-100: #d3c0f7;
+$primary-200: #b596f3;
+$primary-300: #966aef;
+$primary-400: #7b46ec;
+$primary-500: #5e1ce7;
+$primary-600: #5017e1;
+$primary-700: #3b0bd9; // principal
+$primary-800: #1d01d4;
+$primary-900: #0000cd;
+
+// Secondary
+$secondary-050: #faf6ef;
+$secondary-100: #f0e7dc;
+$secondary-200: #e5d7c7;
+$secondary-300: #d7c5af;
+$secondary-400: #c9b398;
+$secondary-500: #bca382;
+$secondary-600: #ae9679;
+$secondary-700: #9c866d;
+$secondary-800: #8e7863;
+$secondary-900: #7e6856;
+
+// Neutral
+$neutral-050: #f9f7fe;
+$neutral-100: #f0eef6;
+$neutral-200: #e5e3eb;
+$neutral-300: #d4d2d9;
+$neutral-400: #afaeb4;
+$neutral-500: #8f8d94;
+$neutral-600: #67656c;
+$neutral-700: #545258;
+$neutral-800: #36343a;
+$neutral-900: #16151a;
+
+// Font family
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../assets/fonts/ClashDisplay-Variable.ttf");
+}
+
+// Font family
+$font-family: "ClashDisplay", sans-serif;
+
+// Font weight
+$font-bold: 700;
+$semi-bold: 600;
+$font-medium: 500;
+$font-regular: 400;
+$font-light: 300;
+
+// Font size
+$font-title: 40px;
+$font-header1: 32px;
+$font-header2: 24px;
+$font-header3: 18px;
+$font-body: 16px;
+$font-small: 14px;
+$font-verysmall: 12px;
+
