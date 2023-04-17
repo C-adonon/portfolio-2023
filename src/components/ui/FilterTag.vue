@@ -30,7 +30,7 @@ export default {
 
 button.filter-btn {
     display: inline-block;
-    padding: 4px 24px;
+    padding: 8px 24px;
     border-radius: 30px;
     background-color: v.$secondary-050;
     font-size: v.$font-body;
