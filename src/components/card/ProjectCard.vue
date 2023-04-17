@@ -51,8 +51,10 @@ div.project-card {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 24px 56px;
+    padding: 56px 48px;
+    border-bottom: 2px solid v.$primary-700;
     cursor: pointer;
+    margin: 2% 0;
 
     div.project-card-image {
         width: 40%;
