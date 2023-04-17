@@ -15,17 +15,20 @@ export default {
 
 .tag {
     display: inline-block;
-    padding: 2px 16px;
+    padding: 4px 16px;
     background-color: v.$primary-700;
-    font-size: v.$font-verysmall;
-    border-radius: 30%;
-    font-weight: v.$font-regular;
+    font-size: v.$font-small;
+    border-radius: 30px;
+    font-weight: v.$font-medium;
     color: v.$secondary-050;
     text-align: center;
+    margin-right: 10px;
+
     // last-child changes background color of last tag
     &:last-child {
         background-color: v.$secondary-050;
         color: v.$primary-700;
+        border: 2px solid v.$primary-700;
     }
 }
 
