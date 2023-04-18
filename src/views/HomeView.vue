@@ -2,14 +2,15 @@
 import { RouterLink, RouterView } from 'vue-router'
 // import NewsTicker from '../components/ui/NewsTicker.vue';
 import ProjectCard from '../components/card/ProjectCard.vue';
-// import Contact from '../components/contact/Contact.vue';
-// import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
-import { getAllProjects } from '../services/services.js';
+import ContactSection from '../components/contact/ContactSection.vue';
+import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
+import CardSuggestion from '../components/card/CardSuggestion.vue';
+import { getAllProjects, getAllCategories, getProjectByName, getProjectsByCategories } from '../services/services.js';
 </script>
 
 
 <template>
-  <div>
+  <main>
     <!-- Hero/Intro -->
     <section class="intro">
       <div class="intro-info">
@@ -19,8 +20,7 @@ import { getAllProjects } from '../services/services.js';
           hic quidem magni laboriosam quasi a, quae facere accusamus reprehenderit. Maxime nostrum voluptas provident
           soluta!</p>
         <!-- TO DO ADD BTN -->
-        <!-- <PrimaryBtn>Télécharger mon CV</PrimaryBtn> -->
-
+        <PrimaryBtn :cv="true">Télécharger mon CV</PrimaryBtn>
       </div>
       <div class="intro-picture">
         <img src="" alt="chloe-adonon">
@@ -42,29 +42,23 @@ import { getAllProjects } from '../services/services.js';
           aliquid hic quidem magni laboriosam quasi a, quae facere accusamus reprehenderit. Maxime nostrum voluptas
           provident
           soluta!</p>
-        <!-- TO DO ADD BTN -->
-        <!-- <PrimaryBtn>Télécharger mon CV</PrimaryBtn> -->
+        <PrimaryBtn url="/about">A propos de moi</PrimaryBtn>
       </div>
     </section>
 
 
     <!-- Projects -->
     <section class="projects">
-      <ul class="projects-list">
-        <li v-for="project in projects">
-          <ProjectCard :key="project.id" :project="project" />
-        </li>
-      </ul>
+      <CardSuggestion />
     </section>
 
 
     <!-- Contact -->
     <section class="contact">
-      <!-- TO DO AJOUTER LE COMPOSANTS CONTACT -->
-      <!-- <Contact />-->
-      <div>Contact component</div>
+      <ContactSection />
     </section>
-  </div>
+  </main>
+  <RouterView />
 </template>
 
 <script>
@@ -73,19 +67,9 @@ export default {
   name: "HomeView",
   components: {
     // NewsTicker,
+    PrimaryBtn,
     ProjectCard,
-    // Contact
-  },
-  data() {
-    return {
-      projects: []
-    }
-  },
-  async created() {
-    let projectsResponse = await getAllProjects();
-    // limit the number of projects to 2
-    this.projects = projectsResponse.data.records.slice(0, 2);
-
+    ContactSection
   }
 }
 
@@ -115,7 +99,6 @@ section.intro {
       color: v.$neutral-900;
     }
 
-    // A modifier
     h2 {
       font-size: 70px;
       font-weight: v.$font-bold;
@@ -125,6 +108,7 @@ section.intro {
     p {
       font-size: v.$font-body;
       font-weight: v.$font-regular;
+      margin-bottom: 4%;
     }
   }
 
@@ -170,20 +154,8 @@ section.about {
     p {
       font-size: v.$font-body;
       font-weight: v.$font-regular;
-      // color: v.$neutral-900;
+      margin-bottom: 4%;
     }
-  }
-}
-
-section.projects {
-  ul.projects-list {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // gap: 2%;
-    list-style: none;
-
-
   }
 }
 </style>
