@@ -42,8 +42,14 @@ $neutral-900: #16151a;
   src: url("../assets/fonts/ClashDisplay-Variable.ttf");
 }
 
+@font-face {
+  font-family: "Elastic";
+  src: url("../assets/fonts/Barlow-elasticc.otf");
+}
+
 // Font family
 $font-family: "ClashDisplay", sans-serif;
+$font-family-elastic: "Elastic", sans-serif;
 
 // Font weight
 $font-bold: 700;
@@ -53,7 +59,10 @@ $font-regular: 400;
 $font-light: 300;
 
 // Font size
+$font-title-XXXL: 200px;
+$font-title-XXL: 120px;
 $font-title-XL: 100px;
+$font-title-L: 75px;
 $font-title: 40px;
 $font-header1: 32px;
 $font-header2: 24px;
