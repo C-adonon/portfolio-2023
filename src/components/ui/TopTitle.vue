@@ -1,6 +1,8 @@
 <template>
     <div class="top-title">
-        <slot></slot>
+        <h1>
+            <slot></slot>
+        </h1>
     </div>
 </template>
 
@@ -14,10 +16,15 @@ export default {
 @use '../../assets/variables.scss' as v;
 
 div.top-title {
-    padding:  4% 8%;
+    padding: 4% 8%;
     text-align: center;
     font-size: 100px;
     font-weight: v.$font-bold;
     color: v.$neutral-800;
+
+    h1 {
+        margin: 0;
+        font-size: v.$font-title-XL;
+    }
 }
 </style>
