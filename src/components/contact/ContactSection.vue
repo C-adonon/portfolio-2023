@@ -7,7 +7,7 @@ import PrimaryBtn from '../ui/PrimaryBtn.vue';
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat quae eum aperiam. Dicta velit
             excepturi pariatur ducimus ex rerum soluta culpa itaque architecto! Ea veritatis a quod repellendus blanditiis?
         </p>
-        <PrimaryBtn email="true">Contactez-moi</PrimaryBtn>
+        <PrimaryBtn email="chloe.adonon@gmail.com">Contactez-moi</PrimaryBtn>
     </div>
 </template>
 
@@ -20,10 +20,8 @@ div.contact {
     flex-direction: column;
     align-items: center;
     padding: 56px 48px;
-    cursor: pointer;
     margin: auto;
     
-
     h3 {
         font-size: 50px;
         font-weight: v.$font-bold;
