@@ -1,27 +1,32 @@
 <script setup>
-import { getAllProjects, getAllCategories, getProjectsByCategories, getProjectByName } from '../services/services.js';
+import { getAllProjects, getAllCategories, getProjectsByCategories } from '../services/services.js';
 import ProjectCard from '../components/card/ProjectCard.vue';
 import FilterTag from '../components/ui/FilterTag.vue';
 import TopTitle from '../components/ui/TopTitle.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-    <TopTitle>Projects</TopTitle>
-    <div class="filter-container">
-        <ul>
-            <li v-for="category in categories">
-                <FilterTag :key="category.id" :filter="category" @currentFilter="filterProjects">
-                    {{ category.fields.name }}</FilterTag>
-            </li>
-        </ul>
-    </div>
-    <div class="project-container">
-        <ul>
-            <li v-for="project in projects">
-                <ProjectCard :key="project.id" :project="project" />
-            </li>
-        </ul>
-    </div>
+    <main>
+        <TopTitle>Projects</TopTitle>
+        <div class="filter-container">
+            <ul>
+                <li v-for="category in categories">
+                    <FilterTag :key="category.id" :filter="category" :isActive="current === category"
+                        @currentFilter="filterProjects">
+                        {{ category.fields.name }}</FilterTag>
+                </li>
+            </ul>
+        </div>
+        <div class="project-container">
+            <ul>
+                <li v-for="project in projects">
+                    <ProjectCard :key="project.id" :project="project" />
+                </li>
+            </ul>
+        </div>
+    </main>
+    <RouterView />
 </template>
 
 <script>
@@ -34,29 +39,36 @@ export default {
     data() {
         return {
             projects: [],
-            categories: []
+            categories: [],
+            current: 'all'
         }
     },
-    async created() {
+    async beforeCreate() {
         let projectsResponse = await getAllProjects();
-        this.projects = projectsResponse.data.records;
-
+        this.projects = projectsResponse;
+  
         let categoriesResponse = await getAllCategories();
-        this.categories = categoriesResponse.data.records;
-
-        console.table(this.projects);
-    
+        this.categories = categoriesResponse;
+        // finds 'all' in the array and moves it to the first position
+        let all = this.categories.find(category => category.fields.url === 'all');
+        let index = this.categories.indexOf(all);
+        this.categories.splice(index, 1);
+        this.categories.unshift(all);
+        
     },
     methods: {
-        filterProjects(filter) {
+        async filterProjects(filter) {
             if (filter === 'all') {
-                // this.projects = getAllProjects();
-                console.log('all');
+                let resp = await getAllProjects();
+                this.projects = resp;
             } else {
                 console.log(filter);
-                // getProjectsByCategories(this.filter.slug)
+                this.current = filter;
+                let resp = await getProjectsByCategories(filter);
+                this.projects = resp;
             }
-        }
+        },
+
     }
 }
 </script>
