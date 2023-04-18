@@ -27,7 +27,7 @@ import SocialBtn from '../ui/SocialBtn.vue';
                             <SocialBtn icon="/github-icon.svg" link="https://github.com/C-adonon/" />
                         </li>
                         <li>
-                            <SocialBtn icon="/mail-icon.svg" cv="chloe.adonon@gmail.com" />
+                            <SocialBtn icon="/mail-icon.svg" mail="chloe.adonon@gmail.com" />
                         </li>
                     </ul>
                 </div>
@@ -70,7 +70,7 @@ footer#footer {
         .footer-links {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 32px;
             width: 30%;
 
             ul.footer-list {
@@ -83,7 +83,7 @@ footer#footer {
                 li.footer-link {
                     a {
                         color: v.$neutral-050;
-                        font-size: v.$font-small;
+                        font-size: v.$font-header3;
                         font-weight: v.$font-bold;
                         cursor: pointer;
                         text-decoration: none;
