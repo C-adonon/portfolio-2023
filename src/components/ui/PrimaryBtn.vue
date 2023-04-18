@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
     <button class="primary-btn">
-        <a v-if="email" href='mailto:chloe.adonon@gmail.com'>
+        <a v-if="email" :href="'mailto:' + email">
             <slot></slot>
         </a>
         <RouterLink v-else-if="url" :to="url">
@@ -32,7 +32,7 @@ export default {
             required: false
         },
         email: {
-            type: Boolean,
+            type: String,
             required: false
         }
 
@@ -44,8 +44,6 @@ export default {
 @use '../../assets/variables.scss' as v;
 
 button.primary-btn {
-    display: inline-block;
-    padding: 16px 80px;
     border-radius: 4px;
     background-color: v.$primary-050;
     font-size: v.$font-body;
@@ -55,10 +53,16 @@ button.primary-btn {
     border: 2px solid v.$neutral-900;
     box-shadow: 4px 4px 0px #16151A;
     cursor: pointer;
-
+    height: fit-content;
+    width: fit-content;
+  
     a {
+        display: block;
+        padding: 16px 80px;
         color: v.$neutral-900;
         text-decoration: none;
+        height: 100%;
+        width: 100%;
     }
 
     &:hover {
