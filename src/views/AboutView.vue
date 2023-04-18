@@ -1,5 +1,6 @@
 <script setup>
 import TopTitle from '../components/ui/TopTitle.vue';
+import CardSuggestion from '../components/card/CardSuggestion.vue';
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import TopTitle from '../components/ui/TopTitle.vue';
         <img src="" alt="moi">
       </div>
     </section>
+    <CardSuggestion/>
   </main>
 </template>
 
