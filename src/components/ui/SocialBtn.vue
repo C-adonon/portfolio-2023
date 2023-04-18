@@ -3,7 +3,7 @@
         <a v-if="link" :href="link" target="_blank" rel="noopener noreferrer">
             <img :src="icon" alt="social icon" />
         </a>
-        <a v-else-if="cv" href="mailto:" target="_blank">
+        <a v-else-if="mail" :href="'mailto:' + mail" target="_blank">
             <img :src="icon" alt="social icon" />
         </a>
     </div>
@@ -17,7 +17,7 @@ export default {
             type: String,
             required: false
         },
-        cv: {
+        mail: {
             type: String,
             required: false
         },
