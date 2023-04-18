@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-// import Tag from '../components/ui/Tag.vue';
+import SocialBtn from '../ui/SocialBtn.vue';
 </script>
 
 <template>
@@ -19,12 +19,21 @@ import { RouterLink, RouterView } from 'vue-router'
                     </li>
                 </ul>
                 <div class="footer-socials">
-                    <div>Tag</div>
-                    <div>Tag</div>
+                    <ul>
+                        <li>
+                            <SocialBtn icon="/linkedin-icon.svg" link="https://www.linkedin.com/in/chloe-adonon/" />
+                        </li>
+                        <li>
+                            <SocialBtn icon="/github-icon.svg" link="https://github.com/C-adonon/" />
+                        </li>
+                        <li>
+                            <SocialBtn icon="/mail-icon.svg" cv="chloe.adonon@gmail.com" />
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <p class="footer-copyrights">&copy; 2021 - Tous droits réservés</p>
+        <p class="footer-copyrights">&copy; 2023 - Tous droits réservés</p>
     </footer>
 </template>
 
@@ -32,9 +41,6 @@ import { RouterLink, RouterView } from 'vue-router'
 @use '../../assets/variables.scss' as v;
 
 footer#footer {
-    // position: fixed;
-    // bottom: 0;
-    // left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -90,6 +96,23 @@ footer#footer {
                 display: flex;
                 justify-content: flex-end;
                 gap: 10px;
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 32px;
+                }
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: v.$neutral-050;
+                        font-size: v.$font-small;
+                        font-weight: v.$font-bold;
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
