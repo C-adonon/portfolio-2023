@@ -5,7 +5,8 @@ import CardTag from './CardTag.vue';
 <template>
     <div class="project-card" @click="goToProject">
         <div class="project-card-image">
-            <img :src="project.fields.card_thumbnail[0].url" alt="project-image">
+            <img :src='assetUrl + project.fields.name_slug + "-thumbnail.jpg"'
+                :alt='project.fields.name_slug + "-thumbnail"'>
         </div>
         <div class="project-card-info">
             <div class="project-card-info-tags">
@@ -22,6 +23,9 @@ import CardTag from './CardTag.vue';
 <script>
 export default {
     name: "ProjectCard",
+    components: {
+        CardTag,
+    },
     props: {
         project: {
             type: Object,
@@ -31,14 +35,12 @@ export default {
     data() {
         return {
             projectTags: this.project.fields.categories_name.filter(tag => tag !== 'Tout voir'),
+            assetUrl: "https://cadonon.esd-monsite.fr/api/portfolio-adonon/data/assets/"
         }
-    },
-    components: {
-        CardTag,
     },
     methods: {
         goToProject() {
-            this.$router.push(`/projects/${this.project.fields.name_slug}`);
+            this.$router.replace({ name: "project", params: { name: this.project.fields.name_slug } });
         }
     }
 }
