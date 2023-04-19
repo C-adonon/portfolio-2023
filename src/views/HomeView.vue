@@ -5,21 +5,20 @@ import ProjectCard from '../components/card/ProjectCard.vue';
 import ContactSection from '../components/contact/ContactSection.vue';
 import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
 import CardSuggestion from '../components/card/CardSuggestion.vue';
-import { getAllProjects, getAllCategories, getProjectByName, getProjectsByCategories } from '../services/services.js';
 </script>
 
 
 <template>
   <main>
     <!-- Hero/Intro -->
+    <div class="gradient-background"></div>
+
     <section class="intro">
       <div class="intro-info">
         <h1>Chloe Adonon</h1>
-        <h2>Creative web Developper</h2>
+        <h2> <span>Creative</span> web Developper</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, animi molestias quos, tempore adipisci aliquid
-          hic quidem magni laboriosam quasi a, quae facere accusamus reprehenderit. Maxime nostrum voluptas provident
-          soluta!</p>
-        <!-- TO DO ADD BTN -->
+          hic quidem magni laboriosam quasi a !</p>
         <PrimaryBtn :cv="true">Télécharger mon CV</PrimaryBtn>
       </div>
       <div class="intro-picture">
@@ -94,19 +93,23 @@ section.intro {
 
   div.intro-info {
     h1 {
-      font-size: v.$font-title;
+      font-size: v.$font-title-L;
       font-weight: v.$font-bold;
       color: v.$neutral-900;
     }
 
     h2 {
-      font-size: 70px;
+      font-size: v.$font-title-XL;
       font-weight: v.$font-bold;
       color: v.$primary-700;
+
+      span {
+        font-family: v.$font-family-elastic;
+      }
     }
 
     p {
-      font-size: v.$font-body;
+      font-size: v.$font-header2;
       font-weight: v.$font-regular;
       margin-bottom: 4%;
     }
