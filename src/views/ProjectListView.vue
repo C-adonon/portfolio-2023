@@ -3,7 +3,6 @@ import { getAllProjects, getAllCategories, getProjectsByCategories } from '../se
 import ProjectCard from '../components/card/ProjectCard.vue';
 import FilterTag from '../components/ui/FilterTag.vue';
 import TopTitle from '../components/ui/TopTitle.vue';
-import { RouterView } from 'vue-router';
 </script>
 
 <template>
@@ -26,7 +25,6 @@ import { RouterView } from 'vue-router';
             </ul>
         </div>
     </main>
-    <RouterView />
 </template>
 
 <script>
@@ -46,15 +44,16 @@ export default {
     async beforeCreate() {
         let projectsResponse = await getAllProjects();
         this.projects = projectsResponse;
-  
+
         let categoriesResponse = await getAllCategories();
         this.categories = categoriesResponse;
+
         // finds 'all' in the array and moves it to the first position
         let all = this.categories.find(category => category.fields.url === 'all');
         let index = this.categories.indexOf(all);
         this.categories.splice(index, 1);
         this.categories.unshift(all);
-        
+
     },
     methods: {
         async filterProjects(filter) {
