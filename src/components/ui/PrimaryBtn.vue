@@ -58,7 +58,7 @@ button.primary-btn {
   
     a {
         display: block;
-        padding: 16px 80px;
+        padding: 16px 64px;
         color: v.$neutral-900;
         text-decoration: none;
         height: 100%;
