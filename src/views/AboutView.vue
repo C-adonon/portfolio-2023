@@ -16,7 +16,7 @@ import CardSuggestion from '../components/card/CardSuggestion.vue';
         <img src="" alt="moi">
       </div>
     </section>
-    <CardSuggestion/>
+    <CardSuggestion />
   </main>
 </template>
 
@@ -30,6 +30,7 @@ section.about-content {
 
   .about-image {
     width: 40%;
+
     // height: 50%;
     img {
       width: 100%;
@@ -54,4 +55,5 @@ section.about-content {
       margin-bottom: 6%;
     }
   }
-}</style>
+}
+</style>
