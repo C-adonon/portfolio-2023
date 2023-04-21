@@ -7,7 +7,7 @@ import PrimaryBtn from '../ui/PrimaryBtn.vue';
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat quae eum aperiam. Dicta velit
             excepturi pariatur ducimus ex rerum soluta culpa itaque architecto! Ea veritatis a quod repellendus blanditiis?
         </p>
-        <PrimaryBtn email="chloe.adonon@gmail.com">Contactez-moi</PrimaryBtn>
+        <PrimaryBtn url="https://www.linkedin.com/in/chloe-adonon/">Contactez-moi</PrimaryBtn>
     </div>
 </template>
 
