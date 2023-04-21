@@ -35,7 +35,7 @@ export default {
     data() {
         return {
             projectTags: this.project.fields.categories_name.filter(tag => tag !== 'Tout voir'),
-            assetUrl: "https://cadonon.esd-monsite.fr/api/portfolio-adonon/data/assets/"
+            assetUrl: import.meta.env.VITE_ASSET_URL
         }
     },
     methods: {
