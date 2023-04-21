@@ -5,7 +5,7 @@ import PrimaryBtn from '../ui/PrimaryBtn.vue';
 </script>
 
 <template>
-    <ul class="projects-list">
+    <ul v-if="projects" class="projects-list">
         <li v-for="project in projects">
             <ProjectCard :key="project.id" :project="project" />
         </li>
@@ -22,22 +22,24 @@ export default {
     },
     data() {
         return {
-            projects: []
+            projects: [],
+            suggestionsMax: 2,
         }
     },
-    async beforeCreate() {
+    async created() {
         let projectsResponse = await getAllProjects();
-        // random number between 0 and 2
-        // let min = Math.floor(Math.random() * 3);
-
-        // 2 variables to get 2 random projects that are not the same
-        let min = Math.floor(Math.random() * 3);
-        let max = Math.floor(Math.random() * 3);
-        if (min === max) {
-            max = Math.floor(Math.random() * 3);
+        this.getRandomProjects(projectsResponse);
+    },
+    methods: {
+        getRandomProjects(resp) {
+            let allProjects = resp;
+            for (let i = 0; i < this.suggestionsMax; i++) {
+                let index = Math.floor(Math.random() * allProjects.length);
+                this.projects.push(allProjects[index]);
+                allProjects.splice(index, 1);
+            }
         }
-        this.projects = projectsResponse.slice(0, 2);
-    }
+    },
 
 }
 </script>
