@@ -17,7 +17,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
             </ul>
             <div class="contact">
-                Contactez-moi
+                <a href="mailto:chloe.adonon@gmail.com">
+                    Contactez-moi
+                </a>
             </div>
         </div>
     </nav>
@@ -91,13 +93,18 @@ nav#navbar {
             width: 50%;
             font-size: v.$font-header2;
             font-weight: v.$font-bold;
-            color: v.$secondary-050;
             background-color: v.$neutral-900;
             cursor: pointer;
 
-            &:hover {
-                color: v.$primary-700;
+            a {
+                text-decoration: none;
+                color: v.$secondary-050;
+
+                &:hover {
+                    color: v.$primary-700;
+                }
             }
+
         }
 
     }
