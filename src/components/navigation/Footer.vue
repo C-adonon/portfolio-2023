@@ -21,13 +21,10 @@ import SocialBtn from '../ui/SocialBtn.vue';
                 <div class="footer-socials">
                     <ul>
                         <li>
-                            <SocialBtn icon="../linkedin-icon.svg" link="https://www.linkedin.com/in/chloe-adonon/" />
+                            <SocialBtn icon="./linkedin-icon.svg" link="https://www.linkedin.com/in/chloe-adonon/" />
                         </li>
                         <li>
-                            <SocialBtn icon="../github-icon.svg" link="https://github.com/C-adonon/" />
-                        </li>
-                        <li>
-                            <SocialBtn icon="../mail-icon.svg" mail="chloe.adonon@gmail.com" />
+                            <SocialBtn icon="./github-icon.svg" link="https://github.com/C-adonon/" />
                         </li>
                     </ul>
                 </div>
