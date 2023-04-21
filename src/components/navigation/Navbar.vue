@@ -17,7 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
             </ul>
             <div class="contact">
-                <a href="mailto:chloe.adonon@gmail.com">
+                <a href="https://www.linkedin.com/in/chloe-adonon/" target="_blank">
                     Contactez-moi
                 </a>
             </div>
