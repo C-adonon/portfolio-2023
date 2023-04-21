@@ -7,10 +7,13 @@ import { RouterLink, RouterView } from 'vue-router'
         <a v-if="email" :href="'mailto:' + email">
             <slot></slot>
         </a>
-        <RouterLink v-else-if="url" :to="url">
+        <RouterLink v-else-if="route" :to="route">
             <slot></slot>
         </RouterLink>
-        <a v-else-if="cv" href="/cv.pdf" download>
+        <a v-else-if="url" :href="url" target="_blank">
+            <slot></slot>
+        </a>
+        <a v-else-if="cv" href="./cv.pdf" download>
             <slot></slot>
         </a>
         <span v-else>
@@ -24,6 +27,10 @@ export default {
     name: "PrimaryBtn",
     props: {
         url: {
+            type: String,
+            required: false
+        },
+        route: {
             type: String,
             required: false
         },
@@ -55,7 +62,7 @@ button.primary-btn {
     cursor: pointer;
     height: fit-content;
     width: fit-content;
-  
+
     a {
         display: block;
         padding: 16px 64px;
