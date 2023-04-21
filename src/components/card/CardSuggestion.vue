@@ -10,7 +10,7 @@ import PrimaryBtn from '../ui/PrimaryBtn.vue';
             <ProjectCard :key="project.id" :project="project" />
         </li>
     </ul>
-    <PrimaryBtn id="projects-btn" url="/projects">Voir tous les projets</PrimaryBtn>
+    <PrimaryBtn id="projects-btn" route="/projects">Voir tous les projets</PrimaryBtn>
 </template>
 
 <script>
@@ -57,6 +57,7 @@ ul {
 
         &:last-child div {
             border: none;
+            flex-direction: row-reverse;
         }
     }
 }
@@ -65,5 +66,4 @@ ul {
     margin: 0 auto;
     display: block;
 }
-
 </style>
