@@ -1,10 +1,10 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 // import NewsTicker from '../components/ui/NewsTicker.vue';
 import ProjectCard from '../components/card/ProjectCard.vue';
 import ContactSection from '../components/contact/ContactSection.vue';
 import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
 import CardSuggestion from '../components/card/CardSuggestion.vue';
+const assetUrl = import.meta.env.VITE_ASSET_URL;
 </script>
 
 
@@ -22,14 +22,14 @@ import CardSuggestion from '../components/card/CardSuggestion.vue';
         <PrimaryBtn :cv="true">Télécharger mon CV</PrimaryBtn>
       </div>
       <div class="intro-picture">
-        <img src="" alt="chloe-adonon">
+        <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
       </div>
     </section>
 
     <!-- About -->
     <section class="about">
       <div class="about-picture">
-        <img src="" alt="chloe-adonon">
+        <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
       </div>
       <div class="about-info">
         <h2>Ceci est un titre</h2>
@@ -51,13 +51,11 @@ import CardSuggestion from '../components/card/CardSuggestion.vue';
       <CardSuggestion />
     </section>
 
-
-    <!-- Contact -->
-    <section class="contact">
-      <ContactSection />
-    </section>
   </main>
-  <RouterView />
+  <!-- Contact -->
+  <section class="contact">
+    <ContactSection />
+  </section>
 </template>
 
 <script>
@@ -77,21 +75,26 @@ export default {
 <style scoped lang="scss">
 @use '../assets/variables.scss' as v;
 
+$overlap: -8%;
+
 section {
-  margin: 5% 0;
+  margin: 10% 0;
 }
 
 section.intro {
   display: flex;
-  gap: -50%;
+  justify-content: center;
   align-items: center;
 
-  div.intro-info,
-  div.intro-picture {
-    width: 50%;
-  }
+  // div.intro-info,
+  // div.intro-picture {
+  //   width: 50%;
+  // }
 
   div.intro-info {
+    margin-right: $overlap;
+    width: 60%;
+
     h1 {
       font-size: v.$font-title-L;
       font-weight: v.$font-bold;
@@ -102,6 +105,7 @@ section.intro {
       font-size: v.$font-title-XL;
       font-weight: v.$font-bold;
       color: v.$primary-700;
+      line-height: 95px;
 
       span {
         font-family: v.$font-family-elastic;
@@ -112,10 +116,15 @@ section.intro {
       font-size: v.$font-header2;
       font-weight: v.$font-regular;
       margin-bottom: 4%;
+      max-width: 70%;
     }
   }
 
   div.intro-picture {
+    margin-left: $overlap;
+    z-index: -1;
+    width: 40%;
+
     img {
       width: 100%;
       height: 100%;
@@ -126,11 +135,12 @@ section.intro {
 
 section.about {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
 
   div.about-picture,
   div.about-info {
-    width: 50%;
+    width: 40%;
   }
 
   div.about-picture {
@@ -160,5 +170,19 @@ section.about {
       margin-bottom: 4%;
     }
   }
+}
+
+section.contact {
+  width: 100vw;
+  height: 90vh;
+  margin: 10% auto;
+  background-image: url("/contact-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
 }
 </style>
