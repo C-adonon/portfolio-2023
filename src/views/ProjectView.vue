@@ -20,7 +20,7 @@ import TertiaryBtn from '../components/ui/TertiaryBtn.vue';
             </div>
             <!-- link -->
             <div v-if="currentProject.fields.link" class="project-link">
-                <!-- <a :href="currentProject.fields.link" target="_blank">Voir le projet</a> -->
+                <p class="link-text">Lien du projet :</p>
                 <TertiaryBtn v-if="currentProject.fields.link" :url="currentProject.fields.link">Voir le site </TertiaryBtn>
             </div>
             <!-- video -->
@@ -31,9 +31,9 @@ import TertiaryBtn from '../components/ui/TertiaryBtn.vue';
             </div>
             <!-- pdf -->
             <div v-if="currentProject.fields.pdf" class="project-pdf">
+                <p class="link-text">Lien utile :</p>
                 <TertiaryBtn v-if="currentProject.fields.pdf" v-for="pdf in currentProject.fields.pdf" :pdf="pdf.filename">
                     Voir le pdf </TertiaryBtn>
-                <!-- <a v-for="pdf in currentProject.fields.pdf" :href="assetUrl + pdf.filename" target="_blank">Voir le pdf</a> -->
             </div>
         </section>
         <CardSuggestion />
@@ -97,6 +97,11 @@ section.project-content {
             margin: 24px 0;
         }
 
+    }
+
+    .link-text{
+        font-size: v.$font-header3;
+        font-weight: v.$semi-bold;      
     }
 
     div.project-content-pictures {
