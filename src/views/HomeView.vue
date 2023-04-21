@@ -176,7 +176,7 @@ section.contact {
   width: 100vw;
   height: 90vh;
   margin: 10% auto;
-  background-image: url("/contact-bg.svg");
+  background-image: url("../contact-bg.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
