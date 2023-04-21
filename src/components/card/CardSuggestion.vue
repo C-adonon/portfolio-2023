@@ -54,6 +54,10 @@ ul {
 
     li {
         margin: 0;
+
+        &:last-child div {
+            border: none;
+        }
     }
 }
 
@@ -61,4 +65,5 @@ ul {
     margin: 0 auto;
     display: block;
 }
+
 </style>

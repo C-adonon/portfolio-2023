@@ -79,6 +79,12 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+
+    li {
+        &:last-child div {
+            border: none;
+        }
+    }
 }
 
 div.filter-container ul {
