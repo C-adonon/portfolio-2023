@@ -3,7 +3,6 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <p class="link-text">Lien utile :</p>
     <div class="tertiary-btn">
         <RouterLink v-if="route" :to="route">
             <slot></slot>
@@ -36,8 +35,7 @@ export default {
     },
     data() {
         return {
-            // assetUrl: "https://cadonon.esd-monsite.fr/api/portfolio-adonon/data/assets/"
-            assetUrl: process.env.VITE_ASSET_URL
+            assetUrl: import.meta.env.VITE_ASSET_URL
         }
     },
 
@@ -50,14 +48,18 @@ export default {
 .tertiary-btn {
     font-size: v.$font-body;
     font-weight: v.$font-medium;
-    color: v.$neutral-900;
-    // text-align: center;
-    cursor: pointer;
     margin: 0 2%;
+    cursor: pointer;
 
     a {
+        color: v.$primary-400;
         display: block;
         padding: 8px 24px;
     }
+
+    &:hover {
+        color: v.$primary-900;
+    }
+
 }
 </style>
