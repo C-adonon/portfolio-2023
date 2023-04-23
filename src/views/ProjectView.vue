@@ -101,7 +101,7 @@ section.project-content {
 
     .link-text{
         font-size: v.$font-header3;
-        font-weight: v.$semi-bold;      
+        font-weight: v.$font-semi-bold;      
     }
 
     div.project-content-pictures {
