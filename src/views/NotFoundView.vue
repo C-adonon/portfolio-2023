@@ -22,7 +22,7 @@ div.not-found {
     justify-content: center;
     height: 60vh;
     text-align: center;
-    background-image: url("https://media.giphy.com/media/xRvMWkuZt2ChfdtdUv/giphy.gif");
+    background-image: url("./not-found-bg.gif");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
