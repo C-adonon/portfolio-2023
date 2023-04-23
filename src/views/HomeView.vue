@@ -22,7 +22,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
       </div>
       <div class="intro-picture">
         <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
-        <!-- <RadialGrandient /> -->
+        <RadialGrandient />
       </div>
     </section>
 
@@ -102,15 +102,16 @@ main {
       width: 65%;
 
       h1 {
-        font-size: 50px;
-        font-weight: v.$font-semi-bold;
+        font-size: v.$font-header1;
+        font-weight: v.$font-bold;
         color: v.$neutral-900;
       }
 
       h2 {
         font-size: v.$font-title-XXL;
-        font-weight: v.$font-bold;
+        font-weight: v.$font-medium;
         color: v.$primary-700;
+        color: v.$neutral-900;
         line-height: 110px;
 
         span {
@@ -138,34 +139,6 @@ main {
         height: 100%;
         object-fit: cover;
       }
-
-      // div.gradient {
-      //   position: absolute;
-      //   top: 30%;
-      //   left: 70%;
-      //   width: 400px;
-      //   height: 400px;
-      //   z-index: -1;
-      //   border-radius: 50%;
-      //   filter: blur(75px);
-      //   background: linear-gradient(50deg, #d3c0f7, #2c36ef);
-      //   background-size: 400% 400%;
-      //   animation: AnimationName 4s ease infinite;
-      // }
-
-      // @keyframes AnimationName {
-      //   0% {
-      //     background-position: 87% 0%
-      //   }
-
-      //   50% {
-      //     background-position: 14% 100%
-      //   }
-
-      //   100% {
-      //     background-position: 87% 0%
-      //   }
-      // }
 
     }
   }
