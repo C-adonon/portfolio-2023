@@ -58,7 +58,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
   <!-- Contact -->
   <NewsTicker>Contact</NewsTicker>
   <section class="contact">
-    <RadialGrandient id="3" top="370%" left="-10%" />
+    <RadialGrandient id="3" top="350%" left="-15%" />
     <ContactSection />
   </section>
   <RadialGrandient id="4" top="410%" left="95%" />
