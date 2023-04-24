@@ -1,43 +1,32 @@
 <template>
-    <div class="grad"></div>
+    <div class="gradient-blob" :id='"blob-" + id'></div>
 </template>
 
 <script>
 export default {
     name: "RadialGrandient",
     props: {
-        height: {
+        id: {
             type: String,
-            default: '400px'
-        },
-        width: {
-            type: String,
-            default: '400px'
+            required: true
         },
         top: {
             type: String,
-            default: '30%'
+            required: true
         },
         left: {
             type: String,
-            default: '70%'
+            required: true
         },
     },
-    created() {
-        // this.setPositon();
-        // this.setSize();
+    mounted() {
+        this.setPositon();
     },
     methods: {
         setPositon() {
-            console.log(this.top)
-            const gradient = document.getElementsByClassName('grad');
-            gradient.style.top = "30%";
-            gradient.style.left = "70%";
-        },
-        setSize() {
-            const gradient = document.querySelector('.grad');
-            gradient.style.width = this.width;
-            gradient.style.height = this.height;
+            let blob = document.querySelector(`#blob-${this.id}`);
+            blob.style.top = this.top;
+            blob.style.left = this.left;
         }
     }
 }
@@ -46,12 +35,10 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/variables.scss' as v;
 
-div.grad {
+div.gradient-blob {
     position: absolute;
-    top: 30%;
-    left: 70%;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     z-index: -1;
     border-radius: 50%;
     filter: blur(75px);
