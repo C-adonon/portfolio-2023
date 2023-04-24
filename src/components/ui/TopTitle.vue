@@ -1,5 +1,10 @@
+<script setup>
+import RadialGrandient from '../gradient/RadialGrandient.vue';
+</script>
+
 <template>
     <div class="top-title">
+        <RadialGrandient top="10%" left="70%" />
         <h1>
             <slot></slot>
         </h1>
@@ -9,6 +14,9 @@
 <script>
 export default {
     name: "TopTitle",
+    components: {
+        RadialGrandient
+    }
 }
 </script>
 
