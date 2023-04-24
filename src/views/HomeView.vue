@@ -21,8 +21,8 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
         <PrimaryBtn :cv="true">Télécharger mon CV</PrimaryBtn>
       </div>
       <div class="intro-picture">
+        <RadialGrandient id="1" top="30%" left="70%" />
         <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
-        <RadialGrandient />
       </div>
     </section>
 
@@ -30,6 +30,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     <NewsTicker>A propos</NewsTicker>
     <section class="about">
       <div class="about-picture">
+        <RadialGrandient id="2" top="150%" left="5%" />
         <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
       </div>
       <div class="about-info">
@@ -51,14 +52,16 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     <section class="projects">
       <CardSuggestion />
     </section>
-
   </main>
 
+
   <!-- Contact -->
-  <NewsTicker>Mes projets</NewsTicker>
+  <NewsTicker>Contact</NewsTicker>
   <section class="contact">
+    <RadialGrandient id="3" top="370%" left="-10%" />
     <ContactSection />
   </section>
+  <RadialGrandient id="4" top="410%" left="95%" />
 </template>
 
 <script>
