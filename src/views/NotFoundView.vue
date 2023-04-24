@@ -1,16 +1,28 @@
 <script setup>
 import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
+import RadialGrandient from '../components/gradient/RadialGrandient.vue';
 </script>
 
 <template>
     <main>
         <div class="not-found">
+            <RadialGrandient top="40%" left="10%" />
             <h1>Oops...</h1>
             <h2>Page introuvable</h2>
             <PrimaryBtn route="/">Retour à l'accueil</PrimaryBtn>
         </div>
     </main>
 </template>
+
+<script>
+export default {
+    name: "NotFoundView",
+    components: {
+        PrimaryBtn,
+        RadialGrandient
+    }
+}
+</script>
 
 <style scoped lang="scss">
 @use '../assets/variables.scss' as v;
