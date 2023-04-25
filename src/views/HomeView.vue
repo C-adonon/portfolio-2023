@@ -58,10 +58,10 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
   <!-- Contact -->
   <Marquee>Contact</Marquee>
   <section class="contact">
-    <RadialGrandient id="3" top="350%" left="-15%" />
+    <RadialGrandient id="3" top="300%" left="-15%" />
     <ContactSection />
   </section>
-  <RadialGrandient id="4" top="410%" left="95%" />
+  <RadialGrandient id="4" top="360%" left="95%" />
 </template>
 
 <script>
@@ -87,7 +87,7 @@ $overlap: -5%;
 
 section {
   width: 80%;
-  margin: 2% auto 8% auto;
+  margin: 8% auto 8% auto;
 }
 
 main {
