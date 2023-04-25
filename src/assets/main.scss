@@ -10,9 +10,10 @@ body {
   font-family: $font-family;
   background-color: $secondary-050;
   color: $neutral-700;
+  overflow-x: hidden;
 
   main {
-    width: 80vw;
+    width: 100vw;
     margin: 0 auto;
     margin-top: calc(80px + 5%);
   }
