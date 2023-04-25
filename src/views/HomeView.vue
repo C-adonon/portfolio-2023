@@ -1,5 +1,5 @@
 <script setup>
-import NewsTicker from '../components/ui/NewsTicker.vue';
+import Marquee from '../components/ui/Marquee.vue';
 import ProjectCard from '../components/card/ProjectCard.vue';
 import ContactSection from '../components/contact/ContactSection.vue';
 import PrimaryBtn from '../components/ui/PrimaryBtn.vue';
@@ -27,10 +27,10 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     </section>
 
     <!-- About -->
-    <NewsTicker>A propos</NewsTicker>
+    <Marquee>A propos</Marquee>
     <section class="about">
       <div class="about-picture">
-        <RadialGrandient id="2" top="150%" left="5%" />
+        <RadialGrandient id="2" top="130%" left="5%" />
         <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
       </div>
       <div class="about-info">
@@ -48,7 +48,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     </section>
 
     <!-- Projects -->
-    <NewsTicker>Mes projets</NewsTicker>
+    <Marquee>Projets</Marquee>
     <section class="projects">
       <CardSuggestion />
     </section>
@@ -56,7 +56,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
 
 
   <!-- Contact -->
-  <NewsTicker>Contact</NewsTicker>
+  <Marquee>Contact</Marquee>
   <section class="contact">
     <RadialGrandient id="3" top="350%" left="-15%" />
     <ContactSection />
@@ -69,7 +69,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
 export default {
   name: "HomeView",
   components: {
-    NewsTicker,
+    Marquee,
     PrimaryBtn,
     ProjectCard,
     ContactSection,
