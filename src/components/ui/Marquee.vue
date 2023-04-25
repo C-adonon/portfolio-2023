@@ -1,19 +1,20 @@
 <template>
-    <div class="marquee">
-        <div class="marquee__inner" aria-hidden="true">
-            <span>
-                <slot></slot>
-            </span>
-            <span>
-                <slot></slot>
-            </span>
-            <span>
-                <slot></slot>
-            </span>
-            <span>
-                <slot></slot>
-            </span>
-        </div>
+    <div class="container">
+        <span>
+            <slot></slot>
+        </span>
+        <span>
+            <slot></slot>
+        </span>
+        <span>
+            <slot></slot>
+        </span>
+        <span>
+            <slot></slot>
+        </span>
+        <span>
+            <slot></slot>
+        </span>
     </div>
 </template>
 
@@ -26,40 +27,29 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/variables.scss' as v;
 
-.marquee {
-    position: relative;
+.container {
+    white-space: nowrap;
     overflow: hidden;
-    --offset: 20vw;
-    --move-initial: calc(-25% + var(--offset));
-    --move-final: calc(-50% + var(--offset));
+    background-color: v.$neutral-900;
 
-    .marquee__inner {
-        width: fit-content;
-        display: flex;
-        position: relative;
-        transform: translate3d(var(--move-initial), 0, 0);
-        animation: marquee 5s linear infinite;
-        animation-play-state: paused;
-
-        span {
-            font-size: 10vw;
-            padding: 0 2vw;
-            white-space: nowrap;
-        }
-    }
-
-    &:hover .marquee__inner {
-        animation-play-state: running;
+    span {
+        display: inline-block;
+        padding-right: 50px;
+        animation: marquee 10s linear infinite;
+        font-size: 100px;
+        font-weight: v.$font-medium;
+        color: v.$primary-050;
+        padding: 10px 15px;
     }
 }
 
 @keyframes marquee {
     0% {
-        transform: translate3d(var(--move-initial), 0, 0);
+        transform: translateX(0);
     }
 
     100% {
-        transform: translate3d(var(--move-final), 0, 0);
+        transform: translateX(-100%);
     }
 }
 </style>
