@@ -6,7 +6,7 @@ import RadialGrandient from '../components/gradient/RadialGrandient.vue';
 <template>
     <main>
         <div class="not-found">
-            <RadialGrandient top="40%" left="10%" />
+            <RadialGrandient id="1" top="40%" left="1%" />
             <h1>Oops...</h1>
             <h2>Page introuvable</h2>
             <PrimaryBtn route="/">Retour à l'accueil</PrimaryBtn>
