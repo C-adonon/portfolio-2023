@@ -40,7 +40,7 @@ export default {
     },
     methods: {
         goToProject() {
-            this.$router.replace({ name: "project", params: { name: this.project.fields.name_slug } });
+            this.$router.push({ name: "project", params: { name: this.project.fields.name_slug } });
         }
     }
 }
@@ -51,13 +51,19 @@ export default {
 
 div.project-card {
     width: 100%;
+    // height: 300px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     padding: 56px 48px;
-    border-bottom: 2px solid v.$primary-700;
     cursor: pointer;
     margin: 2% 0;
+    border-bottom: 2px solid v.$primary-700;
+
+
+    &:hover {
+        background-color: v.$primary-050;
+    }
 
     div.project-card-image {
         width: 40%;
@@ -68,8 +74,8 @@ div.project-card {
         align-items: center;
 
         img {
-            width: 100%;
-            height: 100%;
+            // width: 100%;
+            height: 210px;
             object-fit: cover;
         }
     }
