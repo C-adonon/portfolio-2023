@@ -48,20 +48,19 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     </section>
 
     <!-- Projects -->
-    <Marquee>Projets</Marquee>
     <section class="projects">
       <CardSuggestion />
     </section>
+
+    <!-- Contact -->
+    <Marquee>Contact</Marquee>
+    <section class="contact">
+      <RadialGrandient id="3" top="300%" left="-15%" />
+      <ContactSection />
+    </section>
+    <RadialGrandient id="4" top="360%" left="95%" />
+
   </main>
-
-
-  <!-- Contact -->
-  <Marquee>Contact</Marquee>
-  <section class="contact">
-    <RadialGrandient id="3" top="300%" left="-15%" />
-    <ContactSection />
-  </section>
-  <RadialGrandient id="4" top="360%" left="95%" />
 </template>
 
 <script>
@@ -87,7 +86,7 @@ $overlap: -5%;
 
 section {
   width: 80%;
-  margin: 8% auto 8% auto;
+  margin: 4% auto 8% auto;
 }
 
 main {
@@ -150,7 +149,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 32px;
+    padding: 5%;
 
     div.about-picture,
     div.about-info {
@@ -185,18 +184,22 @@ main {
       }
     }
   }
-}
 
-section.contact {
-  width: 100vw;
-  height: 90vh;
-  background-image: url("../contact-bg.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-x: hidden;
+  section.projects {
+    width: 100%;
+  }
+
+  section.contact {
+    width: 100vw;
+    height: 90vh;
+    background-image: url("../contact-bg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
 }
 </style>
