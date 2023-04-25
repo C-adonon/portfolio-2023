@@ -37,8 +37,8 @@ export default {
         padding-right: 50px;
         animation: marquee 10s linear infinite;
         font-size: 100px;
-        font-weight: v.$font-medium;
-        color: v.$primary-050;
+        font-weight: v.$font-semi-bold;
+        color: v.$secondary-050;
         padding: 10px 15px;
     }
 }
