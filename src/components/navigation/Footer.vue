@@ -45,7 +45,7 @@ footer#footer {
     align-items: center;
     background-color: v.$neutral-900;
     padding: 3% 3% 1% 3%;
-    margin-top: 10%;
+    margin-top: 5%;
 
 
     .footer-info {
