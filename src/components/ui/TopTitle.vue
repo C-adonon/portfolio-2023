@@ -4,7 +4,7 @@ import RadialGrandient from '../gradient/RadialGrandient.vue';
 
 <template>
     <div class="top-title">
-        <RadialGrandient top="10%" left="70%" />
+        <RadialGrandient id="1" top="10%" left="70%" />
         <h1>
             <slot></slot>
         </h1>
