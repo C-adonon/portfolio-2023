@@ -3,16 +3,16 @@ import { getAllProjects, getAllCategories, getProjectsByCategories } from '../se
 import ProjectCard from '../components/card/ProjectCard.vue';
 import FilterTag from '../components/ui/FilterTag.vue';
 import TopTitle from '../components/ui/TopTitle.vue';
+import RadialGrandient from '../components/gradient/RadialGrandient.vue';
 </script>
 
 <template>
     <main>
-        <TopTitle>Projects</TopTitle>
+        <TopTitle>Mes Projets</TopTitle>
         <div class="filter-container">
             <ul>
                 <li v-for="category in categories">
-                    <FilterTag :key="category.id" :filter="category" :isActive="current === category"
-                        @currentFilter="filterProjects">
+                    <FilterTag :key="category.id" :filter="category" :isActive="active" @currentFilter="filterProjects">
                         {{ category.fields.name }}</FilterTag>
                 </li>
             </ul>
@@ -24,6 +24,7 @@ import TopTitle from '../components/ui/TopTitle.vue';
                 </li>
             </ul>
         </div>
+        <RadialGrandient id="2" top="100%" left="-16%" />
     </main>
 </template>
 
@@ -41,7 +42,7 @@ export default {
             current: 'all'
         }
     },
-    async beforeCreate() {
+    async created() {
         let projectsResponse = await getAllProjects();
         this.projects = projectsResponse;
 
@@ -76,13 +77,18 @@ export default {
 @use '../assets/variables.scss' as v;
 
 ul {
+    width: 80%;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 
     li {
         &:last-child div {
             border: none;
+        }
+
+        &:nth-child(2n) div {
+            flex-direction: row-reverse;
         }
     }
 }
