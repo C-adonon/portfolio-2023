@@ -44,6 +44,7 @@ div.gradient-blob {
     filter: blur(75px);
     background: linear-gradient(50deg, #d3c0f7, #2c36ef);
     background-size: 400% 400%;
+    opacity: 0.65;
     animation: AnimationName 4s ease infinite;
 }
 
