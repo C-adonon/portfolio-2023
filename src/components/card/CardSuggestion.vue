@@ -2,15 +2,19 @@
 import { getAllProjects } from '../../services/services.js';
 import ProjectCard from './ProjectCard.vue';
 import PrimaryBtn from '../ui/PrimaryBtn.vue';
+import Marquee from '../ui/Marquee.vue';
 </script>
 
 <template>
-    <ul v-if="projects" class="projects-list">
-        <li v-for="project in projects">
-            <ProjectCard :key="project.id" :project="project" />
-        </li>
-    </ul>
-    <PrimaryBtn id="projects-btn" route="/projects">Voir tous les projets</PrimaryBtn>
+    <div class="projects-suggestions">
+        <Marquee>Projets</Marquee>
+        <ul v-if="projects" class="projects-list">
+            <li v-for="project in projects">
+                <ProjectCard :key="project.id" :project="project" />
+            </li>
+        </ul>
+        <PrimaryBtn id="projects-btn" route="/projects">Voir tous les projets</PrimaryBtn>
+    </div>
 </template>
 
 <script>
@@ -18,7 +22,8 @@ export default {
     name: "CardSuggestion",
     components: {
         ProjectCard,
-        PrimaryBtn
+        PrimaryBtn,
+        Marquee,
     },
     data() {
         return {
@@ -47,23 +52,26 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/variables.scss' as v;
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.projects-suggestions {
+    ul {
+        width: 80%;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
 
-    li {
-        margin: 0;
+        li {
+            margin: 0;
 
-        &:last-child div {
-            border: none;
-            flex-direction: row-reverse;
+            &:last-child div {
+                border: none;
+                flex-direction: row-reverse;
+            }
         }
     }
-}
 
-#projects-btn {
-    margin: 0 auto;
-    display: block;
+    #projects-btn {
+        margin: 0 auto;
+        display: block;
+    }
 }
 </style>
