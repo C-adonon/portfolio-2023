@@ -14,6 +14,7 @@ import TertiaryBtn from '../components/ui/TertiaryBtn.vue';
             <div v-html="description" class="project-content-text">
             </div>
             <!-- pictures -->
+            <p class="link-text">Galerie :</p>
             <div class="project-content-pictures">
                 <img v-for="img in currentProject.fields.pictures" :src='assetUrl + img.filename'
                     alt="currentProject.fields.name">
@@ -25,9 +26,12 @@ import TertiaryBtn from '../components/ui/TertiaryBtn.vue';
             </div>
             <!-- video -->
             <div v-if="currentProject.fields.video" class="project-video">
-                <iframe v-for="video in currentProject.fields.video" :src='assetUrl + video.filename' frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <p class="link-text">Video du projet :</p>
+                <iframe width="560" height="315" :src="currentProject.fields.video" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </div>
             <!-- pdf -->
             <div v-if="currentProject.fields.pdf" class="project-pdf">
@@ -88,6 +92,8 @@ export default {
 @use '../assets/variables.scss' as v;
 
 section.project-content {
+    width: 80%;
+    margin: 4% auto 8% auto;
 
     div.project-content-text {
         margin-bottom: 4%;
@@ -99,15 +105,22 @@ section.project-content {
 
     }
 
-    .link-text{
-        font-size: v.$font-header3;
-        font-weight: v.$font-semi-bold;      
+    div.project-link {
+        margin: 4% 0;
+    }
+
+    .link-text {
+        font-size: v.$font-header2;
+        font-weight: v.$font-semi-bold;
+        color: v.$neutral-900;
+        margin: 8px 0;
     }
 
     div.project-content-pictures {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
+        margin: 4% auto;
 
         img {
             width: 100%;
@@ -115,6 +128,19 @@ section.project-content {
             object-fit: cover;
         }
 
+    }
+
+    div.project-video {
+        margin: 4% 0;
+
+        iframe {
+            display: block;
+            text-align: center;
+            margin: auto;
+            width: 80%;
+            height: 400px;
+            border: none;
+        }
     }
 
 }
