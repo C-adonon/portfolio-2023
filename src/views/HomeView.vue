@@ -16,8 +16,8 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
       <div class="intro-info">
         <h1>Chloe Adonon</h1>
         <h2> <span>Creative</span> web developer</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, animi molestias quos, tempore adipisci aliquid
-          hic !</p>
+        <p>Hello ! Je suis Chloé Adonon, étudiante en développement web et passionnée de pop culture. Je crée des sites
+          uniques et engageants.</p>
         <PrimaryBtn :cv="true">Télécharger mon CV</PrimaryBtn>
       </div>
       <div class="intro-picture">
@@ -34,7 +34,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
         <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
       </div>
       <div class="about-info">
-        <h2>Ceci est un titre</h2>
+        <h2>Créativité et technologie</h2>
         <h3>Ceci est un sous-titre</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, animi molestias quos, tempore adipisci aliquid
           hic quidem magni laboriosam quasi a, quae facere accusamus reprehenderit. Maxime nostrum voluptas provident
@@ -112,13 +112,12 @@ main {
       h2 {
         font-size: v.$font-title-XXL;
         font-weight: v.$font-medium;
-        color: v.$primary-700;
         color: v.$neutral-900;
         line-height: 110px;
 
         span {
           font-family: v.$font-family-elastic;
-          color: v.$primary-900;
+          color: v.$primary-700;
         }
       }
 
