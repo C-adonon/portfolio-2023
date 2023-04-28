@@ -66,7 +66,6 @@ export default {
                 this.projects = resp;
 
             } else {
-                console.log(filter);
                 this.current = filter;
                 let resp = await getProjectsByCategories(filter);
                 this.projects = resp;
