@@ -12,7 +12,8 @@ import RadialGrandient from '../components/gradient/RadialGrandient.vue';
         <div class="filter-container">
             <ul>
                 <li v-for="category in categories">
-                    <FilterTag :key="category.id" :filter="category" :isActive="active" @currentFilter="filterProjects">
+                    <FilterTag :key="category.id" :class="{ active: category.id === activeItem }" :filter="category"
+                        @currentFilter="filterProjects" @catId="setActiveItem">
                         {{ category.fields.name }}</FilterTag>
                 </li>
             </ul>
@@ -39,7 +40,8 @@ export default {
         return {
             projects: [],
             categories: [],
-            current: 'all'
+            current: 'all',
+            activeItem: null
         }
     },
     async created() {
@@ -51,6 +53,7 @@ export default {
 
         // finds 'all' in the array and moves it to the first position
         let all = this.categories.find(category => category.fields.url === 'all');
+        this.activeItem = all.id;
         let index = this.categories.indexOf(all);
         this.categories.splice(index, 1);
         this.categories.unshift(all);
@@ -61,12 +64,16 @@ export default {
             if (filter === 'all') {
                 let resp = await getAllProjects();
                 this.projects = resp;
+
             } else {
                 console.log(filter);
                 this.current = filter;
                 let resp = await getProjectsByCategories(filter);
                 this.projects = resp;
             }
+        },
+        setActiveItem(catId) {
+            this.activeItem = catId;
         },
 
     }
