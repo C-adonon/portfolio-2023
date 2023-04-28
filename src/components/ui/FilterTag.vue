@@ -10,16 +10,18 @@
 <script>
 export default {
     name: "FilterTag",
-    emits: ['currentFilter'],
+    emits: ['currentFilter', 'catId'],
     props: {
         filter: {
             type: Object,
             required: true
-        }
+        },
     },
     methods: {
         filterProjects() {
             this.$emit('currentFilter', this.filter.fields.url);
+            this.$emit('catId', this.filter.id);
+            this.isActive = !this.isActive;
         }
     }
 }
@@ -41,6 +43,12 @@ button.filter-btn {
     cursor: pointer;
 
     &:hover {
+        background-color: v.$primary-700;
+        color: v.$secondary-050;
+        border: 2px solid v.$primary-700;
+    }
+
+    &.active {
         background-color: v.$primary-700;
         color: v.$secondary-050;
         border: 2px solid v.$primary-700;
