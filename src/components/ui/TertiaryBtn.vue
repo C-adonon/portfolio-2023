@@ -46,7 +46,7 @@ export default {
 @use '../../assets/variables.scss' as v;
 
 .tertiary-btn {
-    font-size: v.$font-body;
+    font-size: v.$font-header3;
     font-weight: v.$font-medium;
     margin: 0 2%;
     cursor: pointer;
