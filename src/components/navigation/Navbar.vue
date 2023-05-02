@@ -220,8 +220,6 @@ nav#navbar {
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            // padding: 64px 0px 0px;
-            // gap: 111px;
             background: v.$neutral-900;
             top: 56px;
             left: 0;
