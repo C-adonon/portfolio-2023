@@ -51,7 +51,6 @@ export default {
 
 div.project-card {
     width: 100%;
-    // height: 300px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -59,7 +58,6 @@ div.project-card {
     cursor: pointer;
     margin: 2% 0;
     border-bottom: 2px solid v.$primary-700;
-
 
     &:hover {
         background-color: v.$primary-050;
@@ -74,9 +72,10 @@ div.project-card {
         align-items: center;
 
         img {
-            // width: 100%;
+            width: 100%;
             height: 210px;
-            object-fit: cover;
+            // object-fit: cover;
+            object-fit: contain;
         }
     }
 
@@ -98,6 +97,69 @@ div.project-card {
             font-size: v.$font-body;
             font-weight: v.$font-medium;
             margin: 0;
+        }
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1023px) {
+    div.project-card {
+        padding: 12px 24px;
+
+        div.project-card-info {
+            width: 55%;
+        }
+    }
+
+}
+
+@media (max-width: 900px) {
+    div.project-card {
+        flex-direction: column !important;
+        padding: 4% 2%;
+
+
+        div.project-card-image {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        div.project-card-info {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .project-card-info-tags{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            h4 {
+                font-size: v.$font-header2;
+                font-weight: v.$font-bold;
+                color: v.$primary-700;
+                margin: 4px 0 16px 0;
+            }
+
+            p {
+                font-size: v.$font-body;
+                font-weight: v.$font-medium;
+                margin: 0;
+            }
         }
     }
 }

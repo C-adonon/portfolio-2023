@@ -32,4 +32,11 @@ export default {
     }
 }
 
+@media (max-width: 900px) {
+    
+    .tag {
+        margin-bottom: 1%;
+    }
+}
+
 </style>
