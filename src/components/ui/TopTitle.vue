@@ -35,4 +35,30 @@ div.top-title {
         font-size: v.$font-title-XL;
     }
 }
+
+// Desktop
+@media (min-width: 901px) and (max-width: 1023px) {
+
+    div.top-title {
+        padding: 4% 2%;
+
+        h1 {
+            font-size: 80px !important;
+        }
+    }
+
+}
+
+// Tablet & mobile
+@media (max-width: 900px) {
+
+    div.top-title {
+        padding: 4% 4%;
+
+        h1 {
+            font-size: 60px !important;
+        }
+
+    }
+}
 </style>
