@@ -74,4 +74,26 @@ export default {
         display: block;
     }
 }
+
+// Desktop
+@media (min-width: 901px) and (max-width: 1023px) {
+
+    .projects-suggestions {
+        ul {
+            width: 90%;
+            margin: 8% auto;
+        }
+    }
+
+}
+
+// Tablet & mobile
+@media (max-width: 900px) {
+    .projects-suggestions {
+        ul {
+            width: 95%;
+            margin: 8% auto;
+        }
+    }
+}
 </style>
