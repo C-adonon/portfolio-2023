@@ -165,9 +165,11 @@ main {
 
     div.about-info {
       h2 {
-        font-size: v.$font-header2;
-        font-weight: v.$font-bold;
-        color: v.$neutral-900;
+        font-family: v.$font-family-elastic;
+        font-size: v.$font-header1;
+        color: v.$primary-700;
+        // font-weight: v.$font-bold;
+        // color: v.$neutral-900;
       }
 
       h3 {
@@ -191,6 +193,7 @@ main {
   section.contact {
     width: 100vw;
     height: 90vh;
+    margin-bottom: 0%;
     background-image: url("../contact-bg.svg");
     background-size: cover;
     background-position: center;
@@ -201,4 +204,26 @@ main {
     overflow-x: hidden;
   }
 }
+
+
+
+// Desktop
+@media (min-width: 901px) and (max-width: 1023px) {
+
+  section {
+    width: 100%;
+    margin: 4% auto 8% auto;
+  }
+
+}
+
+// Tablet & mobile
+@media (max-width: 900px) {
+
+  section {
+    width: 100%;
+    margin: 4% auto 8% auto;
+  }
+}
+
 </style>
