@@ -25,7 +25,7 @@ import RadialGrandient from '../components/gradient/RadialGrandient.vue';
                 </li>
             </ul>
         </div>
-        <RadialGrandient id="2" top="100%" left="-16%" />
+        <RadialGrandient id="2" top="calc(100% - 200px)" left="-16%" />
     </main>
 </template>
 
@@ -74,7 +74,6 @@ export default {
         setActiveItem(catId) {
             this.activeItem = catId;
         },
-
     }
 }
 </script>
@@ -106,5 +105,21 @@ div.filter-container ul {
     align-items: center;
     gap: 16px;
     padding: 16px;
+}
+
+@media (min-width: 901px) and (max-width: 1023px) {
+
+    ul {
+        width: 95% !important;
+    }
+
+}
+
+// Tablet & mobile
+@media (max-width: 900px) {
+
+    ul {
+        width: 95% !important;
+    }
 }
 </style>
