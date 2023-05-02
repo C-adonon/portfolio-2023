@@ -124,5 +124,34 @@ footer#footer {
         font-weight: v.$font-regular;
         color: v.$neutral-050;
     }
+
+    @media (max-width: 900px) {
+        .footer-info {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+
+            .footer-logo {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-links {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+
+                ul.footer-list {
+                    justify-content: center;
+                    gap: 20px;
+                }
+
+                .footer-socials {
+                    justify-content: center;
+                    gap: 20px;
+                }
+            }
+        }
+    }
 }
 </style>
