@@ -247,7 +247,7 @@ main {
     }
 
     div.intro-info {
-      margin-top: -20% !important;
+      margin-top: -10% !important;
 
       h1 {
         display: none !important;
@@ -271,6 +271,12 @@ main {
     div.about-info {
       text-align: center;
       width: 100% !important;
+    }
+
+    div.about-info {
+      p {
+        text-align: justify;
+      }
     }
   }
 
