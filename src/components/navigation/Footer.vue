@@ -7,7 +7,7 @@ import SocialBtn from '../ui/SocialBtn.vue';
     <footer id="footer">
         <div class="footer-info">
             <div class="footer-logo">
-                <RouterLink to="/">Logo</RouterLink>
+                <RouterLink to="/"><img src="/logo-white.svg" alt="logo" title="logo"></RouterLink>
             </div>
             <div class="footer-links">
                 <ul class="footer-list">
@@ -21,10 +21,10 @@ import SocialBtn from '../ui/SocialBtn.vue';
                 <div class="footer-socials">
                     <ul>
                         <li>
-                            <SocialBtn icon="./linkedin-icon.svg" link="https://www.linkedin.com/in/chloe-adonon/" />
+                            <SocialBtn icon="/linkedin-icon.svg" link="https://www.linkedin.com/in/chloe-adonon/" />
                         </li>
                         <li>
-                            <SocialBtn icon="./github-icon.svg" link="https://github.com/C-adonon/" />
+                            <SocialBtn icon="/github-icon.svg" link="https://github.com/C-adonon/" />
                         </li>
                     </ul>
                 </div>
@@ -56,11 +56,16 @@ footer#footer {
 
         .footer-logo {
             a {
-                color: v.$neutral-050;
-                font-size: v.$font-title;
-                font-weight: v.$font-bold;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
                 cursor: pointer;
-                text-decoration: none;
+
+                img {
+                    height: 80px;
+                    width: auto;
+                }
+
             }
         }
 
