@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
     <nav id="navbar">
         <div id="navbar-logo">
-            <RouterLink to="/">Logo</RouterLink>
+            <RouterLink to="/"><img src="/logo6.svg" alt="logo" title="logo"></RouterLink>
         </div>
         <div class="links-container">
             <ul class="navbar-list">
@@ -43,14 +43,19 @@ nav#navbar {
     margin-bottom: calc(80px + 4px);
 
     #navbar-logo {
-        margin-left: 4%;
+        margin-left: 2%;
 
         a {
-            font-size: v.$font-title;
-            font-weight: v.$font-bold;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100%;
             cursor: pointer;
-            text-decoration: none;
-            color: v.$neutral-900;
+
+            img {
+                height: 60px;
+                width: 60px;
+            }
         }
     }
 
@@ -61,7 +66,7 @@ nav#navbar {
 
         ul.navbar-list {
             display: flex;
-            height: 100%;
+            // height: 100%;
             width: 100%;
             justify-content: space-evenly;
             align-items: center;
@@ -73,13 +78,21 @@ nav#navbar {
                 font-weight: v.$font-bold;
                 cursor: pointer;
 
-                a {
-                    text-decoration: none;
-                    color: v.$neutral-900;
+                &:hover {
+                    background: linear-gradient(90deg, v.$primary-700 0%, v.$primary-050 100%);
+                    backdrop-filter: blur(10px);
+                    border-radius: 50%;
 
-                    &:hover {
-                        color: v.$primary-700;
-                    }
+                }
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 16px 0%;
+                    color: v.$neutral-900;
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
                 }
 
             }
@@ -94,14 +107,18 @@ nav#navbar {
             font-size: v.$font-header2;
             font-weight: v.$font-bold;
             background-color: v.$neutral-900;
+            text-align: center;
             cursor: pointer;
-
+            padding: 16px 24px;
             a {
                 text-decoration: none;
                 color: v.$secondary-050;
 
                 &:hover {
-                    color: v.$primary-700;
+                    background: linear-gradient(90deg, v.$primary-700 0%, v.$primary-050 100%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
             }
 
