@@ -27,6 +27,7 @@ div.contact-wrapper {
         font-weight: v.$font-bold;
         margin-bottom: 2%;
         color: v.$neutral-900;
+        text-align: center;
     }
 
     p {
