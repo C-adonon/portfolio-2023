@@ -168,6 +168,7 @@ main {
         font-family: v.$font-family-elastic;
         font-size: v.$font-header1;
         color: v.$primary-700;
+        margin-bottom: 2%;
         // font-weight: v.$font-bold;
         // color: v.$neutral-900;
       }
@@ -176,6 +177,7 @@ main {
         font-size: v.$font-header3;
         font-weight: v.$font-light;
         color: v.$neutral-700;
+        margin-bottom: 4%;
       }
 
       p {
@@ -215,6 +217,14 @@ main {
     margin: 4% auto 8% auto;
   }
 
+  div.intro-info {
+    h2 {
+      font-size: 80px !important;
+      line-height: 60px !important;
+    }
+  }
+
+
 }
 
 // Tablet & mobile
@@ -224,6 +234,45 @@ main {
     width: 100%;
     margin: 4% auto 8% auto;
   }
-}
 
+  section.intro {
+    flex-direction: column-reverse;
+
+    div.intro-info,
+    div.intro-picture {
+      width: 95% !important;
+      margin: 0% !important;
+      text-align: center;
+
+    }
+
+    div.intro-info {
+      margin-top: -20% !important;
+
+      h1 {
+        display: none !important;
+      }
+
+      h2 {
+        font-size: 65px !important;
+        line-height: 60px !important;
+      }
+
+      p {
+        max-width: 100% !important;
+      }
+    }
+  }
+
+  section.about {
+    flex-direction: column;
+
+    div.about-picture,
+    div.about-info {
+      text-align: center;
+      width: 100% !important;
+    }
+  }
+
+}
 </style>
