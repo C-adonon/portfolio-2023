@@ -37,4 +37,23 @@ div.contact-wrapper {
         margin-bottom: 6%;
     }
 }
+
+// Desktop
+@media (min-width: 901px) and (max-width: 1023px) {
+
+    div.contact-wrapper {
+        width: 100%;
+        padding: 4% 2%;
+    }
+
+}
+
+// Tablet & mobile
+@media (max-width: 900px) {
+
+    div.contact-wrapper {
+        width: 100%;
+        padding: 4% 4%;
+    }
+}
 </style>
