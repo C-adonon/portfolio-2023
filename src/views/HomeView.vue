@@ -149,11 +149,8 @@ main {
     justify-content: space-evenly;
     align-items: center;
     padding: 5%;
+    gap: 5%;
 
-    div.about-picture,
-    div.about-info {
-      width: 40%;
-    }
 
     div.about-picture {
       img {
@@ -235,6 +232,14 @@ main {
     margin: 4% auto 8% auto;
   }
 
+  #blob-2, #blob-4 {
+    display: none;
+  }
+
+  #blob-1 {
+    top: 0% !important;
+  }
+
   section.intro {
     flex-direction: column-reverse;
 
@@ -254,7 +259,7 @@ main {
       }
 
       h2 {
-        font-size: 65px !important;
+        font-size: 60px !important;
         line-height: 60px !important;
       }
 
