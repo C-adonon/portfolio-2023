@@ -144,4 +144,34 @@ section.project-content {
     }
 
 }
+
+@media (min-width: 901px) and (max-width: 1023px) {
+    section.project-content {
+        width: 95%;
+        margin: 4% auto 8% auto;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 900px) {
+
+    section.project-content {
+        width: 95%;
+        margin: 4% auto 8% auto;
+        text-align: justify;
+
+        div.project-content-pictures {
+            grid-template-columns: 1fr;
+        }
+
+        div.project-video {
+        
+            iframe {
+                width: 100%;
+                height: auto
+            }
+        }
+
+    }
+}
 </style>
