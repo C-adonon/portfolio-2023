@@ -52,4 +52,23 @@ export default {
         transform: translateX(-100%);
     }
 }
+
+@media (min-width: 901px) and (max-width: 1023px) {
+
+    .container {
+        span {
+            font-size: 80px;
+        }
+    }
+}
+
+// Tablet & mobile
+@media (max-width: 900px) {
+
+    .container {
+        span {
+            font-size: 12vh;
+        }
+    }
+}
 </style>
