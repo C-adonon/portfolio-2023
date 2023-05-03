@@ -26,7 +26,11 @@ export default {
         setPositon() {
             let blob = document.querySelector(`#blob-${this.id}`);
             blob.style.top = this.top;
-            blob.style.left = this.left;
+            if (window.innerWidth <= 900 && this.left >= "70%") {
+                blob.style.left = "30%";
+            } else {
+                blob.style.left = this.left;
+            }
         }
     }
 }
@@ -59,6 +63,16 @@ div.gradient-blob {
 
     100% {
         background-position: 87% 0%
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1023px) {}
+
+@media (max-width: 900px) {
+
+    div.gradient-blob {
+        width: 60vw;
+        height: 70vh;
     }
 }
 </style>
