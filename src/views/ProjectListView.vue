@@ -111,6 +111,7 @@ div.filter-container ul {
 
     ul {
         width: 95% !important;
+        margin: 8% auto;
     }
 
 }
@@ -120,6 +121,7 @@ div.filter-container ul {
 
     ul {
         width: 95% !important;
+        margin: 8% auto;
     }
 }
 </style>
