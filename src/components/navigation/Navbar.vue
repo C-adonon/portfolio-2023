@@ -33,18 +33,27 @@ export default {
     name: 'Navbar',
     methods: {
         openMobileMenu() {
-            if (window.innerWidth < 900) {
+            if (window.innerWidth <  900) {
                 const linksContainer = document.querySelector('#all-links');
                 linksContainer.classList.toggle('mobile-links-container');
                 linksContainer.classList.toggle('links-container');
                 let menuIcon = document.querySelector('.menu-icon');
 
                 if (menuIcon.src.includes('menu-icon.svg')) {
-                    menuIcon.src = '/close-icon.svg';
+                    menuIcon.src = './close-icon.svg';
                 } else {
                     menuIcon.src = '/menu-icon.svg';
                 }
 
+                // on click on a link, close the menu
+                const navbarLinks = document.querySelectorAll('.navbar-links');
+                navbarLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        linksContainer.classList.remove('mobile-links-container');
+                        linksContainer.classList.add('links-container');
+                        menuIcon.src = './menu-icon.svg';
+                    })
+                })
             }
 
         }
@@ -224,7 +233,7 @@ nav#navbar {
             top: 56px;
             left: 0;
             width: 100%;
-            height: 80vh;
+            height: 60vh;
 
             ul.navbar-list {
                 list-style: none;
