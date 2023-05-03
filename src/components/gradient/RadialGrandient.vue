@@ -72,7 +72,7 @@ div.gradient-blob {
 
     div.gradient-blob {
         width: 60vw;
-        height: 70vh;
+        height: 50vh;
     }
 }
 </style>
