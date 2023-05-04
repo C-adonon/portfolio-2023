@@ -33,7 +33,7 @@ export default {
     name: 'Navbar',
     methods: {
         openMobileMenu() {
-            if (window.innerWidth <  900) {
+            if (window.innerWidth < 900) {
                 const linksContainer = document.querySelector('#all-links');
                 linksContainer.classList.toggle('mobile-links-container');
                 linksContainer.classList.toggle('links-container');
@@ -125,13 +125,6 @@ nav#navbar {
                 font-weight: v.$font-bold;
                 cursor: pointer;
 
-                &:hover {
-                    background: linear-gradient(90deg, v.$primary-700 0%, v.$primary-050 100%);
-                    backdrop-filter: blur(10px);
-                    border-radius: 50%;
-
-                }
-
                 a {
                     display: block;
                     text-decoration: none;
@@ -140,6 +133,11 @@ nav#navbar {
                     height: 100%;
                     width: 100%;
                     text-align: center;
+
+                    &:hover,
+                    &.router-link-active {
+                        color: v.$primary-700;
+                    }
                 }
 
             }
