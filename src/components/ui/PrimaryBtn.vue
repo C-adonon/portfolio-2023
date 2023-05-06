@@ -62,6 +62,8 @@ button.primary-btn {
     cursor: pointer;
     height: fit-content;
     width: fit-content;
+    margin-bottom: 4px !important;
+    transition: all 0.2s ease-in-out;
 
     a {
         display: block;
