@@ -14,15 +14,15 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     <!-- Hero/Intro -->
     <section class="intro">
       <div class="intro-info">
-        <h1>Chloe Adonon</h1>
+        <h1>Chloé Adonon</h1>
         <h2> <span>Creative</span> web developer</h2>
-        <p>Hello ! Je suis Chloé Adonon, étudiante en développement web et passionnée de pop culture. Je crée des sites
-          uniques et engageants.</p>
+        <p>Développeuse web créative passionnée de design et de pop culture, je crée des expériences digitales uniques et
+          innovantes.</p>
         <PrimaryBtn :cv="true">Télécharger mon CV</PrimaryBtn>
       </div>
       <div class="intro-picture">
         <RadialGrandient id="1" top="30%" left="70%" />
-        <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
+        <img src="/moi2.jpg" alt="chloe-adonon">
       </div>
     </section>
 
@@ -31,18 +31,21 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
     <section class="about">
       <div class="about-picture">
         <RadialGrandient id="2" top="130%" left="5%" />
-        <img :src='assetUrl + "inoya-ads-3.jpg"' alt="chloe-adonon">
+        <img src="/moi1.jpg" alt="chloe-adonon">
       </div>
       <div class="about-info">
         <h2>Créativité et technologie</h2>
-        <h3>Ceci est un sous-titre</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, animi molestias quos, tempore adipisci aliquid
-          hic quidem magni laboriosam quasi a, quae facere accusamus reprehenderit. Maxime nostrum voluptas provident
-          soluta!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, animi molestias quos, tempore adipisci
-          aliquid hic quidem magni laboriosam quasi a, quae facere accusamus reprehenderit. Maxime nostrum voluptas
-          provident
-          soluta!</p>
+        <p>Hello ! Je suis Chloé Adonon, j’étudie le développement web à l’ESD Paris.
+          Le web est mon terrain de jeu préféré, une page blanche où je peux donner vie à mes idées.
+        </p>
+        <p>
+          Ma passion pour la pop culture nourrit ma créativité et me permet de concevoir des expériences engageantes,
+          ludiques et innovantes.
+        </p>
+        <p>
+          Pour moi, créativité et technologie sont indissociables : ce sont les piliers de mon travail. J'apprends en
+          créant, mais aussi en collaborant avec les autres !
+        </p>
         <PrimaryBtn route="/about">A propos de moi</PrimaryBtn>
       </div>
     </section>
@@ -82,7 +85,7 @@ export default {
 <style scoped lang="scss">
 @use '../assets/variables.scss' as v;
 
-$overlap: -5%;
+$overlap: -8%;
 
 section {
   width: 80%;
@@ -106,11 +109,13 @@ main {
       h1 {
         font-size: v.$font-header1;
         font-weight: v.$font-bold;
+        font-weight: v.$font-semi-bold;
         color: v.$neutral-900;
+        // color: v.$primary-700;
       }
 
       h2 {
-        font-size: v.$font-title-XXL;
+        font-size: 8vw;
         font-weight: v.$font-medium;
         color: v.$neutral-900;
         line-height: 110px;
@@ -153,9 +158,10 @@ main {
 
 
     div.about-picture {
+      max-width: 40%;
       img {
         width: 100%;
-        height: 100%;
+        height: auto;
         object-fit: cover;
       }
     }
@@ -165,15 +171,6 @@ main {
         font-family: v.$font-family-elastic;
         font-size: v.$font-header1;
         color: v.$primary-700;
-        margin-bottom: 2%;
-        // font-weight: v.$font-bold;
-        // color: v.$neutral-900;
-      }
-
-      h3 {
-        font-size: v.$font-header3;
-        font-weight: v.$font-light;
-        color: v.$neutral-700;
         margin-bottom: 4%;
       }
 
@@ -232,7 +229,8 @@ main {
     margin: 4% auto 8% auto;
   }
 
-  #blob-2, #blob-4 {
+  #blob-2,
+  #blob-4 {
     display: none;
   }
 
@@ -275,7 +273,7 @@ main {
     div.about-picture,
     div.about-info {
       text-align: center;
-      width: 100% !important;
+      max-width: 100% !important;
     }
 
     div.about-info {
