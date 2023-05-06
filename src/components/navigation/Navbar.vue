@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
     <nav id="navbar">
         <div id="navbar-logo">
-            <RouterLink to="/"><img src="/logo6.svg" alt="logo" title="logo"></RouterLink>
+            <RouterLink to="/"><img src="/logo-black.svg" alt="logo" title="logo"></RouterLink>
         </div>
         <div class="navbar-mobile-open" @click="openMobileMenu">
             <img class="menu-icon" src="/menu-icon.svg" alt="menu-icon" title="menu-icon">
@@ -89,8 +89,8 @@ nav#navbar {
             cursor: pointer;
 
             img {
-                height: 60px;
-                width: 60px;
+                height: 50px;
+                // width: 70px;
             }
         }
     }
