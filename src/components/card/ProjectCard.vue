@@ -14,7 +14,7 @@ import CardTag from './CardTag.vue';
                     tag }}
                 </CardTag>
             </div>
-            <h4>{{ project.fields.name }}</h4>
+            <h3>{{ project.fields.name }}</h3>
             <p>{{ project.fields.card_description }}</p>
         </div>
     </div>
@@ -86,7 +86,7 @@ div.project-card {
         flex-direction: column;
         justify-content: space-evenly;
 
-        h4 {
+        h3 {
             font-size: v.$font-header2;
             font-weight: v.$font-bold;
             color: v.$primary-700;
@@ -148,7 +148,7 @@ div.project-card {
                 align-items: center;
             }
 
-            h4 {
+            h3 {
                 font-size: v.$font-header2;
                 font-weight: v.$font-bold;
                 color: v.$primary-700;
