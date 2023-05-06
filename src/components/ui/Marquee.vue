@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <h2 class="container">
         <span>
             <slot></slot>
         </span>
@@ -15,7 +15,7 @@
         <span>
             <slot></slot>
         </span>
-    </div>
+    </h2>
 </template>
 
 <script>
