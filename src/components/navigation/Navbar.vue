@@ -42,7 +42,7 @@ export default {
                 if (menuIcon.src.includes('menu-icon.svg')) {
                     menuIcon.src = './close-icon.svg';
                 } else {
-                    menuIcon.src = '/menu-icon.svg';
+                    menuIcon.src = './menu-icon.svg';
                 }
 
                 // on click on a link, close the menu
@@ -90,7 +90,6 @@ nav#navbar {
 
             img {
                 height: 50px;
-                // width: 70px;
             }
         }
     }
@@ -113,7 +112,6 @@ nav#navbar {
 
         ul.navbar-list {
             display: flex;
-            // height: 100%;
             width: 100%;
             justify-content: space-evenly;
             align-items: center;
@@ -225,13 +223,12 @@ nav#navbar {
             position: absolute;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: flex-start;
             align-items: center;
             background: v.$neutral-900;
             top: 56px;
             left: 0;
             width: 100%;
-            height: 60vh;
 
             ul.navbar-list {
                 list-style: none;
