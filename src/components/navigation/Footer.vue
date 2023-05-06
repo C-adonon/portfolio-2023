@@ -90,6 +90,10 @@ footer#footer {
                         cursor: pointer;
                         text-decoration: none;
 
+                        &:hover{
+                            color: v.$primary-700;
+                        }
+
                     }
                 }
             }
