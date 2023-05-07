@@ -7,19 +7,28 @@
 }
 
 body {
-  font-family: $font-family;
+  font-family: $clash-display;
   background-color: $secondary-050;
   color: $neutral-700;
   overflow-x: hidden;
-  
+
   main {
     overflow-x: hidden;
     width: 100vw;
     margin: 0 auto;
-    margin-top: calc(80px + 5%);
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    main {
+      margin-top: 56px;
+    }
   }
 }
 
 button {
-  font-family: $font-family;
+  font-family: $clash-display;
 }
+
