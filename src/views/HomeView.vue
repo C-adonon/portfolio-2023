@@ -34,7 +34,7 @@ const assetUrl = import.meta.env.VITE_ASSET_URL;
         <img src="/moi1.jpg" alt="chloe-adonon">
       </div>
       <div class="about-info">
-        <h2>Créativité et technologie</h2>
+        <h3>Créativité et technologie</h3>
         <p>Hello ! Je suis Chloé Adonon, j’étudie le développement web à l’ESD Paris.
           Le web est mon terrain de jeu préféré, une page blanche où je peux donner vie à mes idées.
         </p>
@@ -89,7 +89,7 @@ $overlap: -8%;
 
 section {
   width: 80%;
-  margin: 4% auto 8% auto;
+  margin: 4% auto 4% auto;
 }
 
 main {
@@ -98,9 +98,11 @@ main {
   margin-top: calc(80px + 5%);
 
   section.intro {
+    height: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0%;
 
     div.intro-info {
       margin-right: $overlap;
@@ -111,7 +113,6 @@ main {
         font-weight: v.$font-bold;
         font-weight: v.$font-semi-bold;
         color: v.$neutral-900;
-        // color: v.$primary-700;
       }
 
       h2 {
@@ -121,7 +122,7 @@ main {
         line-height: 110px;
 
         span {
-          font-family: v.$font-family-elastic;
+          font-family: v.$elastic;
           color: v.$primary-700;
         }
       }
@@ -159,6 +160,7 @@ main {
 
     div.about-picture {
       max-width: 40%;
+
       img {
         width: 100%;
         height: auto;
@@ -167,8 +169,8 @@ main {
     }
 
     div.about-info {
-      h2 {
-        font-family: v.$font-family-elastic;
+      h3 {
+        font-family: v.$elastic;
         font-size: v.$font-header1;
         color: v.$primary-700;
         margin-bottom: 4%;
@@ -187,17 +189,8 @@ main {
   }
 
   section.contact {
-    width: 100vw;
-    height: 90vh;
-    margin-bottom: 0%;
-    background-image: url("../contact-bg.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -239,6 +232,7 @@ main {
   }
 
   section.intro {
+    height: 100% !important;
     flex-direction: column-reverse;
 
     div.intro-info,
