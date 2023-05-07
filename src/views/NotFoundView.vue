@@ -40,13 +40,13 @@ div.not-found {
     background-repeat: no-repeat;
 
     h1 {
-        font-family: v.$font-family-elastic;
+        font-family: v.$elastic;
         font-size: 200px;
         color: v.$primary-400;
     }
 
     h2 {
-        font-family: v.$font-family-elastic;
+        font-family: v.$elastic;
         font-size: 75px;
         color: v.$primary-400;
     }
