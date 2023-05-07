@@ -85,4 +85,12 @@ button.primary-btn {
     }
 
 }
+
+@media (max-width: 900px) {
+    button.primary-btn {
+        a {
+            padding: 16px 56px;
+        }
+    }
+}
 </style>
